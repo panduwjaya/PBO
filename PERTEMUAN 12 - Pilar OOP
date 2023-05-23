@@ -1,0 +1,55 @@
+// encapsulation
+class Animal {
+
+    // constructor in class animal
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void sound() {
+        System.out.println("The animal makes a sound");
+    }
+}
+
+// inheritance
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+
+    // polymorphism
+    @Override
+    public void sound() {
+        System.out.println(getName() + " barks");
+    }
+}
+
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+
+    // polymorphism
+    @Override
+    public void sound() {
+        System.out.println(getName() + " meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // object
+        Animal animal1 = new Dog("Buddy");
+        Animal animal2 = new Cat("Whiskers");
+
+        animal1.sound();
+        animal2.sound();
+    }
+}
